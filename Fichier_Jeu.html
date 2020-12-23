@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML, CSS and JavaScript demo</title>
+	<link type="text/css" rel="stylesheet" href="Fichier_jeu.css">
+	<script type="text/javascript" src="Fichier_jeu.js"></script>
+	<meta charset="utf-8">
+</head>
+
+<body>
+    <!-- PERSONNAGES -->
+	<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML, CSS and JavaScript demo</title>
+	<link type="text/css" rel="stylesheet" href="Fichier_jeu.css">
+	<script type="text/javascript" src="Fichier_jeu.js"></script>
+	<meta charset="utf-8">
+</head>
+
+<body>
+    <!-- Start your code here -->
+	<section id="Zone_BackPerso"> 	
+			<button id="taille_perso" onclick="s_artamiel()"  title="Passif : Possède une réduction de 20% des dégâts reçus">
+				<div class="Perso"><input type="image" id="image" alt="" src="img/artamiel.png" width=75%, height=100%><id="pv_perso_un">HP : 100<br>MP : 50<br></div>Artamiel</button>
+			<button id="taille_perso" onclick="s_deva()" title="Passif : Possède une augmentation de 20% des dégâts que Deva inflige">
+				<div class="Perso"><input type="image" id="image" alt="" src="img/deva.png" width=75%, height=100%><id="pv_perso_deux">HP : 100<br>MP : 50</div>Deva</button>
+			<button id="taille_perso" onclick="s_susano()" title="Passif : Possède une augmentation de 20% des dégâts que Susano inflige">
+				<div class="Perso"><input type="image" id="image" alt="" src="img/susano.png" width=75%, height=100%><id="pv_perso_trois">HP : 100<br>MP : 50</div>Susano</button>
+			<button id="taille_perso" onclick="s_woosa()" title="Passif : Possède une augmentation de 20% de points de vie.">
+				<div class="Perso"><input type="image" id="image" alt="" src="img/woosa.png" width=75%, height=100%><id="pv_perso_quatre">HP : 110<br>MP : 50</div>Woosa</button>
+    </section>
+		
+<section id="Artamiel">
+	<div id="skill_artamiel" style="display:none">
+		<button id="taille_competence" onclick="choix_competence_1()">Epée Sainte (MP:0)<br><br>Artamiel utilise son épée pour écraser l'ennemi ciblé.</button>
+			<br>
+		<button id="taille_competence" onclick="choix_competence_heal()">Soin de l'Archange (MP:30)<br><br>Artamiel utilise les pouvoirs divins pour soigné de 30% les HPs maximum d'un allié ciblé.</button>
+			<br>
+		<button id="taille_competence" onclick="choix_competence_heal_zone()">Bain régénérateur (MP:40)<br><br>Artamiel utilise les pouvoirs divins pour soigner tous les alliés de 20% de leurs HPs maximum.</button> </div>
+		
+		<div id="cible_attaque" style="display:none">
+		<button id="taille_competence" onclick="choix_ennemi_1()"><input type="image" id="image" alt="" src="img/boss_un.png" width=75%, height=100%></button>
+			<br>
+		<button id="taille_competence" onclick="choix_ennemi_2()"><input type="image" id="image" alt="" src="img/boss_deux.png" width=75%, height=100%></button>
+			<br>
+		<button id="taille_competence" onclick="choix_ennemi_3()"><input type="image" id="image" alt="" src="img/boss_trois.png" width=75%, height=100%></button></div>
+		
+		<div id="cible_heal" style="display:none">
+		<button id="taille_competence" onclick="choix_allie_1()"><input type="image" id="image" alt="" src="img/artamiel.png" width=75%, height=100%></button>
+			<br>
+		<button id="taille_competence" onclick="choix_allie_2()"><input type="image" id="image" alt="" src="img/deva.png" width=75%, height=100%></button>
+			<br>
+		<button id="taille_competence" onclick="choix_allie_3()"><input type="image" id="image" alt="" src="img/susano.png"width=75%, height=100%></button>
+			<br>
+		<button id="taille_competence" onclick="choix_allie_4()"><input type="image" id="image" alt="" src="img/woosa.png"width=75%, height=100%></button></div>
+		
+		<div id="heal_groupe" style="display:none">
+		<button id="taille_competence" onclick="choix_allie_1()">Tous</button></div>
+</section>
+	
+	
+<section id="Deva">
+	<div id="skill_deva" style="display:none">
+		<button id="taille_competence" onclick="choix_competence_1()">Attaque (MP:0)<br><br>Deva utilise ses chakrams pour attaquer l'ennemi ciblé.</button>
+			<br>
+		<button id="taille_competence" onclick="choix_competence_zone()">Attaque de zone (MP:20)<br><br>Deva utilise ses chakrams pour attaquer tous les ennemies du plateau.</button>
+			<br>
+		<button id="taille_competence" onclick="choix_competence_buff_deva()">Buff Attaque (MP:20)<br><br>Deva améliore ses caractéristiques offensives.</button> </div>
+		
+		<div id="attaque_zone" style="display:none">
+		<button id="taille_competence" onclick="choix_ennemi_1()">Tous</button></div>
+		
+		<div id="buff_attaque_deva" style="display:none">
+		<button id="taille_competence" onclick="choix_allie_1()"><input type="image" id="image" alt="" src="img/deva.png" width=75%, height=100%></button></div>
+</section>
+
+
+<section id="Susano">	
+	<div id="skill_susano" style="display:none">
+		<button id="taille_competence" onclick="choix_competence_1()">Attaque (MP:0)<br><br>Susano utilise son épée maudite pour attaquer l'ennemi ciblé.</button>
+			<br>
+		<button id="taille_competence" onclick="choix_competence_monocible_special()">Attaque spécial monocible (MP:20)<br><br>Susano utilise le pouvoir draconique pour attaquer l'ennemi ciblé à deux reprises.</button>
+			<br>
+		<button id="taille_competence" onclick="choix_competence_buff_susano()">Buff Attaque (MP:20)<br><br>Susano utilise l'aura draconique pour augmenter ses caractéristiques offensives.</button> </div>
+
+		<div id="cible_attaque" style="display:none">
+		<button id="taille_competence" onclick="choix_ennemi_1()"><input type="image" id="image" alt="" src="img/boss_un.png" width=75%, height=100%></button>
+			<br>
+		<button id="taille_competence" onclick="choix_ennemi_2()"><input type="image" id="image" alt="" src="img/boss_deux.png" width=75%, height=100%></button>
+			<br>
+		<button id="taille_competence" onclick="choix_ennemi_3()"><input type="image" id="image" alt="" src="img/boss_trois.png" width=75%, height=100%></button></div>
+		
+		<div id="attaque_special_monocible" style="display:none">
+		<button id="taille_competence" onclick="choix_ennemi_1()"><input type="image" id="image" alt="" src="img/boss_un.png" width=75%, height=100%></button>
+			<br>
+		<button id="taille_competence" onclick="choix_ennemi_2()"><input type="image" id="image" alt="" src="img/boss_deux.png" width=75%, height=100%></button>
+			<br>
+		<button id="taille_competence" onclick="choix_ennemi_3()"><input type="image" id="image" alt="" src="img/boss_trois.png" width=75%, height=100%></button></div>
+
+		<div id="buff_attaque_susano" style="display:none">
+		<button id="taille_competence" onclick="choix_allie_1()"><input type="image" id="image" alt="" src="img/susano.png"width=75%, height=100%></button></div>
+</section>
+
+
+<section id="Woosa">	
+		<div id="skill_woosa" style="display:none">
+		<button id="taille_competence" onclick="choix_competence_1()">Attaque  (MP:0)<br><br>Woosa attaque l'ennemi avec la puissance du Yin et du Yang.</button>
+			<br>
+		<button id="taille_competence" onclick="choix_competence_bouclier()">Bouclier (MP:30)<br><br>Woosa active un bouclier équivalent à 15% de ses PVs max.</button>
+			<br>
+		<button id="taille_competence" onclick="choix_competence_heal_dmg()">Heal (MP:20)<br><br>Woosa soigne de 10% les PV de tous les alliés en infligeant des dégats à un ennemi ciblé.</button> </div>
+
+		<div id="cible_attaque" style="display:none">
+		<button id="taille_competence" onclick="choix_ennemi_1()"><input type="image" id="image" alt="" src="img/boss_un.png" width=75%, height=100%></button>
+			<br>
+		<button id="taille_competence" onclick="choix_ennemi_2()"><input type="image" id="image" alt="" src="img/boss_deux.png" width=75%, height=100%></button>
+			<br>
+		<button id="taille_competence" onclick="choix_ennemi_3()"><input type="image" id="image" alt="" src="img/boss_trois.png" width=75%, height=100%></button></div>
+
+		<div id="buff_groupe" style="display:none">
+		<button id="taille_competence" onclick="choix_allie_1()">Tous</button></div>
+
+		<div id="attaque_heal_monocible" style="display:none">
+		<button id="taille_competence" onclick="choix_ennemi_1()"><input type="image" id="image" alt="" src="img/boss_un.png" width=75%, height=100%></button>
+			<br>
+		<button id="taille_competence" onclick="choix_ennemi_2()"><input type="image" id="image" alt="" src="img/boss_deux.png" width=75%, height=100%></button>
+			<br>
+		<button id="taille_competence" onclick="choix_ennemi_3()"><input type="image" id="image" alt="" src="img/boss_trois.png" width=75%, height=100%></button></div>
+
+
+</section>
+
+<section class="ennemis">
+		<img class="boss" id="image_boss_un" src="img/boss_un.png" onclick="bossChoisi = bossUn(boss_un)">
+			<table class="stats_boss_un" onclick="bossChoisi = bossUn(boss_un)">
+				<tr>
+					<td class="stats_boss_table">Nom</td>
+					<td class="stats_boss_table_nom" id="boss_un">Verex</td>
+				</tr>
+				<tr>
+					<td class="stats_boss_table">PV</td>
+					<td class="stats_boss_table" id="pv_boss_un">100</td>
+				</tr>
+			</table>
+		<img class="boss" id="image_boss_deux" src="img/boss_deux.png" onclick="bossChoisi = bossDeux(boss_deux)">
+			<table class="stats_boss_deux" onclick="bossChoisi = bossDeux(boss_deux)">
+				<tr>
+					<td class="stats_boss_table">Nom</td>
+					<td class="stats_boss_table_nom" id="boss_deux">Redex</td>
+				</tr>
+				<tr>
+					<td class="stats_boss_table">PV</td>
+					<td class="stats_boss_table" id="pv_boss_deux">100</td>
+				</tr>
+			</table>
+		<img class="boss" id="image_boss_trois" src="img/boss_trois.png" onclick="bossChoisi = bossTrois(boss_trois)">
+			<table class="stats_boss_trois" onclick="bossChoisi = bossTrois(boss_trois)">
+				<tr>
+					<td class="stats_boss_table">Nom</td>
+					<td class="stats_boss_table_nom" id="boss_trois">Bluex</td>
+				</tr>
+				<tr>
+					<td class="stats_boss_table">PV</td>
+					<td class="stats_boss_table" id="pv_boss_trois">100</td>
+				</tr>
+			</table>
+</section>
+    <!-- MONSTRES-->
+</body>
+
+</html>
